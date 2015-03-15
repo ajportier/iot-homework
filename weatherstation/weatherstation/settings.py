@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'weatherapp'
 )
 
@@ -52,6 +53,15 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'weatherstation.urls'
 
 WSGI_APPLICATION = 'weatherstation.wsgi.application'
+
+TEMPLATE_DIRS = (
+        BASE_DIR + '/templates',
+        )
+
+REST_FRAMEWORK = {
+        'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+        'PAGINATE_BY': 10,
+        }
 
 
 # Database
